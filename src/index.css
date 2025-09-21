@@ -11,12 +11,16 @@ html, body {
 }
 
 .app {
-  min-height: 100vh;
-  display: flex; /* better than grid here */
+  height: 100%; /* Changed from min-height: 100vh */
+  width: 100%;
+  position: absolute; /* Added to ensure full-screen coverage */
+  top: 0;
+  left: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-image: url('./assets/background.jpg');
-  background-size: cover;        /* ensures full cover */
-  background-position: center;   /* keeps it centered */
-  background-repeat: no-repeat;  /* no repeating */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
