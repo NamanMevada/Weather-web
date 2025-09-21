@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import './Weather.css';
-import searchicon from '../assets/search2.png';
+import searchicon from '../assets/search.png';
 import clearicon from '../assets/clear.png';
 import cloudicon from '../assets/cloud.png';
 import drizzleicon from '../assets/drizzle.png';
@@ -42,6 +42,8 @@ const Weather = () => {
          const url =  `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${import.meta.env.VITE_APP_ID}`;
          const response = await fetch(url);
          const data = await response.json();
+         
+         console.log(data);
 
          if (!response.ok) {
             alert(data.message);
