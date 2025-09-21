@@ -2,10 +2,9 @@
     place-self: center;
     padding: 40px;
     border-radius: 15px;
-    /* make gradient semi-transparent */
     background: linear-gradient(
         135deg,
-        rgba(0, 20, 60, 0.5),  /* reduce alpha for transparency */
+        rgba(0, 20, 60, 0.5),
         rgba(0, 102, 204, 0.4)
     );
     backdrop-filter: blur(20px);
@@ -14,10 +13,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* softer shadow for glass effect */
-    color: #fff; /* ensure text is readable */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    max-width: 450px; /* optional for better layout */
+    width: 100%;
 }
-
 
 .search-bar {
     display: flex;
@@ -26,7 +26,6 @@
 }
 
 .search-bar input {
-
     height: 50px;
     border: none;
     outline: none;
@@ -43,7 +42,6 @@
     border-radius: 50%;
     background: #ebfffc;
     cursor: pointer;
-    
 }
 
 .weathericon {
@@ -52,7 +50,7 @@
 }
 
 .temperature {
-    color: #ffff;
+    color: #fff;
     font-size: 80px;
     line-height: 1;
 }
@@ -62,11 +60,11 @@
     font-size: 40px;
     display: flex;
     align-items: center;
-    gap: 10px; /* space between icon and text */
+    gap: 10px;
 }
 
 .location-icon {
-    width: 28px;   /* adjust size to fit */
+    width: 28px;
     height: 28px;
 }
 
@@ -74,32 +72,37 @@
     color: #fff;
     font-size: 24px;
     margin: 5px 0;
-    text-transform: capitalize; /* makes "clear sky" → "Clear Sky" */
+    text-transform: capitalize;
 }
 
 .weather-data {
     width: 100%;
     margin-top: 40px;
-    color: #ffff;
     display: flex;
+    flex-wrap: wrap; /* allows more cols in one row */
     justify-content: space-between;
+    gap: 15px; /* spacing between columns */
 }
 
 .weather-data .col {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
     font-size: 22px;
+    flex: 1 1 45%; /* makes it responsive */
 }
-.weather-data .col span{
+
+.weather-data .col span {
     display: block;
     font-size: 16px;
+    color: #ddd;
+}
 
-}
-.weather-data .col img{
+.weather-data .col img {
     width: 26px;
-    margin-top: 10px;
+    height: 26px;
 }
+
 @media (max-width: 768px) {
     .weather {
         padding: 25px;
@@ -141,15 +144,14 @@
     }
 
     .weather-data {
-        flex-direction: row; /* keep items in a row */
-        gap: 15px; /* smaller gap between items */
+        gap: 10px;
         margin-top: 25px;
-        justify-content: space-between;
     }
 
     .weather-data .col {
         font-size: 18px;
         gap: 8px;
+        flex: 1 1 45%;
     }
 
     .weather-data .col span {
@@ -158,6 +160,6 @@
 
     .weather-data .col img {
         width: 22px;
-        margin-top: 5px;
+        height: 22px;
     }
 }
