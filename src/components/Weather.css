@@ -114,7 +114,70 @@
 
 /* ---------- MOBILE RESPONSIVE GRID ---------- */
 @media (max-width: 480px) {
+    .weather {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .search-bar {
+        gap: 8px;
+    }
+
+    .search-bar input {
+        height: 36px;
+        font-size: 14px;
+        padding-left: 12px;
+    }
+
+    .search-bar img {
+        width: 36px;
+        padding: 6px;
+    }
+
+    .weathericon {
+        width: 100px;
+        margin: 15px 0;
+    }
+
+    .temperature {
+        font-size: 36px;
+    }
+
+    .location {
+        font-size: 16px;
+        gap: 6px;
+    }
+
+    .location-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .description {
+        font-size: 14px;
+        margin: 4px 0;
+    }
+
+    /* ---------- MOBILE WEATHER DATA: 2 ITEMS PER ROW ---------- */
     .weather-data {
         grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .weather-data .col {
+        justify-content: center; /* center content inside each cell */
+        gap: 6px;
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .weather-data .col span {
+        font-size: 12px;
+    }
+
+    .weather-data .col img {
+        width: 20px;
+        height: 20px;
     }
 }
