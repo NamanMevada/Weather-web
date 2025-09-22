@@ -14,8 +14,8 @@
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     color: #fff;
     max-width: 450px;
-    width: 100%;
-    margin: auto;
+    width: 90%;      /* instead of 100% → adds space on sides */
+    margin: auto;    /* keeps it centered */
 }
 
 .search-bar {
