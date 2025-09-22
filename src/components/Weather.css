@@ -3,8 +3,8 @@
     padding: clamp(20px, 5vw, 40px);
     border-radius: 15px;
     background: linear-gradient(135deg,
-            rgba(0, 20, 60, 0.5),
-            rgba(0, 102, 204, 0.4));
+        rgba(0, 20, 60, 0.5),
+        rgba(0, 102, 204, 0.4));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -15,9 +15,7 @@
     color: #fff;
     max-width: 450px;
     width: 90%;
-    /* instead of 100% → adds space on sides */
     margin: auto;
-    /* keeps it centered */
 }
 
 .search-bar {
@@ -25,15 +23,12 @@
     align-items: center;
     gap: clamp(6px, 3vw, 12px);
     width: 100%;
-    /* stays inside parent */
     box-sizing: border-box;
 }
 
 .search-bar input {
     flex: 1 1 auto;
-    /* input can shrink if needed */
     min-width: 0;
-    /* allows shrinking inside flex */
     height: clamp(36px, 5vw, 50px);
     border: none;
     outline: none;
@@ -47,14 +42,12 @@
 
 .search-bar img {
     flex-shrink: 0;
-    /* icon stays same size */
     width: clamp(32px, 8vw, 50px);
     padding: clamp(8px, 2vw, 14px);
     border-radius: 50%;
     background: #ebfffc;
     cursor: pointer;
 }
-
 
 .weathericon {
     width: clamp(100px, 25vw, 150px);
@@ -107,8 +100,7 @@
     gap: clamp(6px, 2vw, 12px);
     font-size: clamp(14px, 4vw, 22px);
     flex: 1 1 45%;
-    min-width: 140px;
-    /* prevents too small on narrow screens */
+    min-width: 120px; /* allow smaller on mobile */
 }
 
 .weather-data .col span {
@@ -120,4 +112,29 @@
 .weather-data .col img {
     width: clamp(18px, 5vw, 26px);
     height: clamp(18px, 5vw, 26px);
+}
+
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+@media (max-width: 480px) {
+    .weather-data {
+        flex-wrap: nowrap; /* keep all in one row if possible */
+        justify-content: space-around;
+        overflow-x: auto; /* allow horizontal scroll if needed */
+    }
+
+    .weather-data .col {
+        flex: 0 0 auto; /* prevent flex shrink */
+        min-width: 80px; /* smaller width for mobile */
+    }
+}
+
+/* Optional scrollbar hidden for mobile smooth look */
+@media (max-width: 480px) {
+    .weather-data::-webkit-scrollbar {
+        display: none;
+    }
+    .weather-data {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 }
