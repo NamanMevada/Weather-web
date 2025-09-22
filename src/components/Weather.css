@@ -14,19 +14,26 @@
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     color: #fff;
     max-width: 450px;
-    width: 90%;      /* instead of 100% → adds space on sides */
-    margin: auto;    /* keeps it centered */
+    width: 90%;
+    /* instead of 100% → adds space on sides */
+    margin: auto;
+    /* keeps it centered */
 }
 
 .search-bar {
     display: flex;
     align-items: center;
-    gap: clamp(8px, 3vw, 12px);
+    gap: clamp(6px, 3vw, 12px);
     width: 100%;
+    /* stays inside parent */
+    box-sizing: border-box;
 }
 
 .search-bar input {
-    flex: 1;
+    flex: 1 1 auto;
+    /* input can shrink if needed */
+    min-width: 0;
+    /* allows shrinking inside flex */
     height: clamp(36px, 5vw, 50px);
     border: none;
     outline: none;
@@ -35,15 +42,19 @@
     color: #626262;
     background: #ebfffc;
     font-size: clamp(14px, 2.5vw, 18px);
+    box-sizing: border-box;
 }
 
 .search-bar img {
+    flex-shrink: 0;
+    /* icon stays same size */
     width: clamp(32px, 8vw, 50px);
     padding: clamp(8px, 2vw, 14px);
     border-radius: 50%;
     background: #ebfffc;
     cursor: pointer;
 }
+
 
 .weathericon {
     width: clamp(100px, 25vw, 150px);
@@ -96,7 +107,8 @@
     gap: clamp(6px, 2vw, 12px);
     font-size: clamp(14px, 4vw, 22px);
     flex: 1 1 45%;
-    min-width: 140px; /* prevents too small on narrow screens */
+    min-width: 140px;
+    /* prevents too small on narrow screens */
 }
 
 .weather-data .col span {
