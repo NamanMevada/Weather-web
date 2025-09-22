@@ -85,12 +85,12 @@
     text-align: center;
 }
 
+/* ---------- NEW GRID FOR WEATHER DATA ---------- */
 .weather-data {
     width: 100%;
     margin-top: clamp(20px, 5vw, 40px);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: clamp(8px, 3vw, 15px);
 }
 
@@ -99,8 +99,6 @@
     align-items: center;
     gap: clamp(6px, 2vw, 12px);
     font-size: clamp(14px, 4vw, 22px);
-    flex: 1 1 45%;
-    min-width: 120px; /* allow smaller on mobile */
 }
 
 .weather-data .col span {
@@ -114,27 +112,9 @@
     height: clamp(18px, 5vw, 26px);
 }
 
-/* ---------------- MOBILE RESPONSIVE ---------------- */
+/* ---------- MOBILE RESPONSIVE GRID ---------- */
 @media (max-width: 480px) {
     .weather-data {
-        flex-wrap: nowrap; /* keep all in one row if possible */
-        justify-content: space-around;
-        overflow-x: auto; /* allow horizontal scroll if needed */
-    }
-
-    .weather-data .col {
-        flex: 0 0 auto; /* prevent flex shrink */
-        min-width: 80px; /* smaller width for mobile */
-    }
-}
-
-/* Optional scrollbar hidden for mobile smooth look */
-@media (max-width: 480px) {
-    .weather-data::-webkit-scrollbar {
-        display: none;
-    }
-    .weather-data {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
     }
 }
