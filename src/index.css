@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   width: 100%;
   margin: 0;
-  padding: 0; /* Prevents scrollbars on small screens */
+  padding: 0;
 }
 
 * {
@@ -15,8 +15,8 @@ html, body {
 }
 
 .app {
-  height: 100vh; /* Use viewport height for better responsiveness */
-  width: 100vw; /* Use viewport width for full coverage */
+  min-height: 100vh;        /* Fixes hidden elements issue */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,5 +24,7 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative; /* Use relative positioning */
+  position: relative;
+  overflow-y: auto;         /* Allow scroll if content is larger */
+  -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
 }
