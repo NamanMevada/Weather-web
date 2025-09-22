@@ -1,227 +1,167 @@
 .weather {
-  padding: 2.5rem;
-  border-radius: 0.9375rem;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 20, 60, 0.5),
-    rgba(0, 102, 204, 0.4)
-  );
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.3);
-  color: #fff;
-  max-width: 450px;
-  width: 90%;
-  margin: auto;
-  transition: all 0.3s ease-in-out;
+    place-self: center;
+    padding: 40px;
+    border-radius: 15px;
+    background: linear-gradient(135deg,
+            rgba(0, 20, 60, 0.5),
+            rgba(0, 102, 204, 0.4));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    max-width: 450px;
+    /* optional for better layout */
+    width: 100%;
 }
 
 .search-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  flex-shrink: 0; /* Prevents it from collapsing on mobile */
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .search-bar input {
-  flex: 1;
-  height: 3.125rem;
-  border: none;
-  outline: none;
-  border-radius: 2.5rem;
-  padding-left: 1.5625rem;
-  color: #626262;
-  background: #ebfffc;
-  font-size: 1.125rem;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding-left: 25px;
+    color: #626262;
+    background: #ebfffc;
+    font-size: 18px;
 }
 
 .search-bar img {
-  width: 3.125rem;
-  padding: 0.875rem;
-  border-radius: 50%;
-  background: #ebfffc;
-  cursor: pointer;
+    width: 50px;
+    padding: 14px;
+    border-radius: 50%;
+    background: #ebfffc;
+    cursor: pointer;
 }
 
 .weathericon {
-  width: 9.375rem;
-  margin: 1.875rem 0;
+    width: 150px;
+    margin: 30px 0;
 }
 
 .temperature {
-  color: #fff;
-  font-size: 5rem;
-  line-height: 1;
-  text-align: center;
+    color: #fff;
+    font-size: 80px;
+    line-height: 1;
 }
 
 .location {
-  color: #fff;
-  font-size: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
+    color: #fff;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .location-icon {
-  width: 1.75rem;
-  height: 1.75rem;
+    width: 28px;
+    height: 28px;
 }
 
 .description {
-  color: #fff;
-  font-size: 1.5rem;
-  margin: 0.3125rem 0;
-  text-transform: capitalize;
-  text-align: center;
+    color: #fff;
+    font-size: 24px;
+    margin: 5px 0;
+    text-transform: capitalize;
 }
 
 .weather-data {
-  width: 100%;
-  margin-top: 2.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.9375rem;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    /* allows more cols in one row */
+    justify-content: space-between;
+    gap: 15px;
+    /* spacing between columns */
 }
 
 .weather-data .col {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.375rem;
-  flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    flex: 1 1 45%;
+    /* makes it responsive */
 }
 
 .weather-data .col span {
-  display: block;
-  font-size: 1rem;
-  color: #ddd;
+    display: block;
+    font-size: 16px;
+    color: #ddd;
 }
 
 .weather-data .col img {
-  width: 1.625rem;
-  height: 1.625rem;
+    width: 26px;
+    height: 26px;
 }
 
-/* 📱 Mobile adjustments */
-@media (max-width: 480px) {
-  .weather {
-    padding: 1.25rem;
-    width: 95%;
-  }
+@media (max-width: 768px) {
+    .weather {
+        padding: 25px;
+        border-radius: 12px;
+        width: 90%;
+    }
 
-  .search-bar input {
-    height: 2.5rem;
-    font-size: 1rem;
-    padding-left: 1.25rem;
-  }
+    .search-bar input {
+        height: 40px;
+        font-size: 16px;
+        padding-left: 15px;
+    }
 
-  .search-bar img {
-    width: 2.5rem;
-    padding: 0.625rem;
-  }
+    .search-bar img {
+        width: 40px;
+        padding: 10px;
+    }
 
-  .weathericon {
-    width: 6.25rem;
-    margin: 1.25rem 0;
-  }
+    .weathericon {
+        width: 120px;
+        margin: 20px 0;
+    }
 
-  .temperature {
-    font-size: 3rem;
-  }
+    .temperature {
+        font-size: 60px;
+    }
 
-  .location {
-    font-size: 1.5rem;
-  }
+    .location {
+        font-size: 28px;
+    }
 
-  .description {
-    font-size: 1.125rem;
-  }
+    .location-icon {
+        width: 22px;
+        height: 22px;
+    }
 
-  .weather-data {
-    flex-direction: column;
-    gap: 1.25rem;
-    align-items: center;
-  }
+    .description {
+        font-size: 18px;
+    }
 
-  .weather-data .col {
-    font-size: 1.25rem;
-    width: 100%;
-    justify-content: center;
-  }
+    .weather-data {
+        gap: 10px;
+        margin-top: 25px;
+    }
 
-  .weather-data .col span {
-    font-size: 0.9rem;
-  }
+    .weather-data .col {
+        font-size: 18px;
+        gap: 8px;
+        flex: 1 1 45%;
+    }
 
-  .weather-data .col img {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
+    .weather-data .col span {
+        font-size: 14px;
+    }
 
-/* 📱 Extra small phones */
-@media (max-width: 360px) {
-  .weather {
-    padding: 1rem;
-  }
-
-  .temperature {
-    font-size: 2.5rem;
-  }
-
-  .location {
-    font-size: 1.25rem;
-  }
-
-  .description {
-    font-size: 1rem;
-  }
-}
-
-/* 📲 Tablets */
-@media (min-width: 481px) and (max-width: 768px) {
-  .weather {
-    padding: 2rem;
-  }
-
-  .temperature {
-    font-size: 4rem;
-  }
-
-  .location {
-    font-size: 2rem;
-  }
-
-  .description {
-    font-size: 1.25rem;
-  }
-}
-
-/* 💻 Small desktops */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .weather {
-    max-width: 500px;
-  }
-
-  .temperature {
-    font-size: 4.5rem;
-  }
-
-  .location {
-    font-size: 2.25rem;
-  }
-
-  .description {
-    font-size: 1.375rem;
-  }
+    .weather-data .col img {
+        width: 22px;
+        height: 22px;
+    }
 }
